@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>log/qyp.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>log/qyp.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>10</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level [%thread] %logger - %msg [%file:%line] %n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<logger name="org.springframework.web"  additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="ALL"/>
+	</logger>
+	<logger name="org.qyp"  additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="ALL"/>
+	</logger>
+</configuration>
