@@ -83,6 +83,8 @@ public class ActivityServices {
 			memberActivity.setDuty(request.getDuty());
 			memberActivity.setMemberId(request.getMemberId());
 			memberActivity.setSingUpStatus("noPass");
+			memberActivity.setDuty(request.getDuty());
+			memberActivity.setNickName(request.getNickName());
 			if (memberActivityDao.updateMemberStatus(memberActivity) == false) {
 				memberActivityDao.insertMemberActivity(memberActivity);
 			}
@@ -173,7 +175,7 @@ public class ActivityServices {
 					response.setActivityPhotoUrl(activity.getActivityPhotoUrl());
 					response.setActivityTitle(activity.getActivityTitle());
 					response.setStatus(activity.getStatus());
-					response.setSignUpStatus(memberActivity.getSingUpStatus()); // 设置当前用户的活动状态
+					response.setSignUpStatus(memberActivity.getSingUpStatus()); // 璁剧疆褰撳墠鐢ㄦ埛鐨勬椿鍔ㄧ姸鎬�
 					resultList.add(response);
 				}
 			}
