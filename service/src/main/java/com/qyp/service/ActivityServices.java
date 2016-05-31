@@ -87,9 +87,10 @@ public class ActivityServices {
 		}
 		MemberActivity memberActivity = new MemberActivity();
 		memberActivity.setActivityId(Integer.valueOf(request.getActivityId()));
-		memberActivity.setDuty(request.getDuty());
 		memberActivity.setMemberId(request.getMemberId());
-		memberActivity.setSingUpStatus("nonCheck");
+		memberActivity.setBoard(request.getBoard());
+		memberActivity.setDuty(request.getDuty());
+		memberActivity.setSingUpStatus("nonCheck");//nonCheck未审核
 		memberActivityDao.insertMemberActivity(memberActivity);
 		return ResponseDto.create(true, null);
 	}
@@ -172,7 +173,7 @@ public class ActivityServices {
 					response.setActivityPhotoUrl(activity.getActivityPhotoUrl());
 					response.setActivityTitle(activity.getActivityTitle());
 					response.setStatus(activity.getStatus());
-					response.setSignUpStatus(memberActivity.getSingUpStatus()); // 设置当前用户的活动状态
+					response.setSignUpStatus(memberActivity.getSingUpStatus()); // 璁剧疆褰撳墠鐢ㄦ埛鐨勬椿鍔ㄧ姸鎬�
 					resultList.add(response);
 				}
 			}

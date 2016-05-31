@@ -5,14 +5,15 @@ import java.io.File;
 public class FileUtils {
 
 	public static void main(String[] args) {
-		String path = "D:\\AliDrive\\5.work_space\\work2\\qyp\\bundle\\target\\qyp.bundle-1.0-SNAPSHOT-bundle";
+		String path = "D:\\Workspaces\\eclipse\\qyp-service\\bundle\\target\\qyp.bundle-1.0-SNAPSHOT-bundle";
 		File filePath = new File(path);
-		String allPath = "java -classpath .;";
+		String allPath = "java -cp .:";
 		for (File file : filePath.listFiles()) {
 			String tempPath = file.getName();
-			allPath += tempPath + ";";
+			allPath += "lib/" + tempPath + ":";
 		}
-		allPath += " com.qyp.StartQYPApplication";
+		allPath = allPath.substring(0, allPath.length() - 1)
+				+ " com.qyp.StartQYPApplication";
 		System.out.println(allPath);
 	}
 

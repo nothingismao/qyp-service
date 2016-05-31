@@ -19,26 +19,5 @@ public class StartQYPApplication implements CommandLineRunner {
 
 	public void run(String... args) throws Exception {
 		System.out.println("Start server");
-		// ActivityWithBLOBs activity = new ActivityWithBLOBs();
-		// activity.setActivityTitle("测试中文");
-		// activity.setStartTime("2005-05-05");
-		// activity.setEndTime("2005-05-05");
-		// activity.setDestination("destination");
-		// activity.setCreator("creator");
-		// activity.setMinPeopleSize(1);
-		// activity.setMaxPeopleSize(30);
-		// activity.setBudget("budget");
-		// activity.setDeposit("deposit");
-		// activity.setDutyList("dutyList");
-		// activity.setBoardList("boardList");
-		// activity.setPaymentUrl("paymentUrl");
-		// activity.setActivityDescription("activityDescription");
-		// int maxActivityId = activityDaoImpl.getMaxActivityId();
-		// activity.setActivityId(maxActivityId + 1);
-		// boolean success = activityDaoImpl.insertActivity(activity);
-		// ActivityWithBLOBs activityNew = activityDaoImpl
-		// .getActivityByActivityId(String.valueOf(maxActivityId + 1));
-		// System.out.println(activityNew);
-
 	}
 }
