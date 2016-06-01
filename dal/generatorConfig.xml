@@ -50,27 +50,27 @@
 		<!-- enableSelectByExample="true" selectByExampleQueryId="true"> -->
 		<!-- <generatedKey column="ID" sqlStatement="mysql" identity="true" /> -->
 		<!-- </table> -->
-
+<!-- 
 		<table schema="qrp" tableName="activity" domainObjectName="Activity"
 			enableCountByExample="true" enableUpdateByExample="true"
 			enableDeleteByExample="true" enableSelectByExample="true"
 			selectByExampleQueryId="true">
 			<generatedKey column="ID" sqlStatement="mysql" identity="true" />
 		</table>
-
+-->
 		<table schema="qrp" tableName="member" domainObjectName="Member"
 			enableCountByExample="true" enableUpdateByExample="true"
 			enableDeleteByExample="true" enableSelectByExample="true"
 			selectByExampleQueryId="true">
 			<generatedKey column="ID" sqlStatement="mysql" identity="true" />
 		</table>
-
+<!-- 
 		<table schema="qrp" tableName="member_activity" domainObjectName="MemberActivity"
 			enableCountByExample="true" enableUpdateByExample="true"
 			enableDeleteByExample="true" enableSelectByExample="true"
 			selectByExampleQueryId="true">
 			<generatedKey column="ID" sqlStatement="mysql" identity="true" />
 		</table>
-
+ -->
 	</context>
 </generatorConfiguration>

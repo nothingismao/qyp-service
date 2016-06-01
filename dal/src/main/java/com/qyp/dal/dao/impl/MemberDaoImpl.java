@@ -60,8 +60,9 @@ public class MemberDaoImpl implements MemberDao {
     @Override
     public boolean updateMember(Member member) {
         MemberExample memberExample = new MemberExample();
-        memberExample.createCriteria().andMemberIdEqualTo(member.getMemberId());
-        int result = memberMapper.updateByExample(member, memberExample);
+        String memberId = member.getMemberId(); 
+        memberExample.createCriteria().andMemberIdEqualTo(member.getMemberId()).andIdIsNotNull();
+        int result = memberMapper.updateByExampleSelective(member, memberExample);
         if (result == 1) {
             return true;
         }

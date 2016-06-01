@@ -3,131 +3,152 @@ package com.qyp.request.dto;
 import java.io.Serializable;
 
 public class ActivitySignUpRequest implements Serializable {
-    private static final long serialVersionUID = 4964792258133514624L;
-    String                    memberId;
-    String                    nickName;
-    int                       age;
-    String                    sex;
-    String                    board;
-    String                    talent;
-    String                    duty;
-    String                    remarks;
-    String                    activityId;
-    boolean                   isSettingDefault;
-    String                    isSingle;
-    String                    phoneNumber;
-    String                    email;
+	private static final long serialVersionUID = 4964792258133514624L;
+	String memberId;
+	String nickName;
+	int age;
+	String sex;
+	String board;
+	String talent;
+	String duty;
+	String remarks;
+	String activityId;
+	boolean isSettingDefault;
+	String isSingle;
+	String phoneNumber;
+	String email;
+	String passPort;
+	String realName;
 
-    public String getMemberId() {
-        return memberId;
-    }
+	public String getRealName() {
+		return realName;
+	}
 
-    public void setMemberId(String memberId) {
-        this.memberId = memberId;
-    }
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
 
-    public String getNickName() {
-        return nickName;
-    }
+	public String getPassPort() {
+		return passPort;
+	}
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
+	public void setPassPort(String passPort) {
+		this.passPort = passPort;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public String getMemberId() {
+		return memberId;
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
 
-    public String getSex() {
-        return sex;
-    }
+	public String getNickName() {
+		return nickName;
+	}
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
 
-    public String getBoard() {
-        return board;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    public void setBoard(String board) {
-        this.board = board;
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
 
-    public String getTalent() {
-        return talent;
-    }
+	public String getSex() {
+		return sex;
+	}
 
-    public void setTalent(String talent) {
-        this.talent = talent;
-    }
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 
-    public String getDuty() {
-        return duty;
-    }
+	public String getBoard() {
+		return board;
+	}
 
-    public void setDuty(String duty) {
-        this.duty = duty;
-    }
+	public void setBoard(String board) {
+		this.board = board;
+	}
 
-    public String getRemarks() {
-        return remarks;
-    }
+	public String getTalent() {
+		return talent;
+	}
 
-    public void setRemarks(String remarks) {
-        this.remarks = remarks;
-    }
+	public void setTalent(String talent) {
+		this.talent = talent;
+	}
 
-    public String getActivityId() {
-        return activityId;
-    }
+	public String getDuty() {
+		return duty;
+	}
 
-    public void setActivityId(String activityId) {
-        this.activityId = activityId;
-    }
+	public void setDuty(String duty) {
+		this.duty = duty;
+	}
 
-    public boolean isSettingDefault() {
-        return isSettingDefault;
-    }
+	public String getRemarks() {
+		return remarks;
+	}
 
-    public void setSettingDefault(boolean isSettingDefault) {
-        this.isSettingDefault = isSettingDefault;
-    }
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
 
-    public String getIsSingle() {
-        return isSingle;
-    }
+	public String getActivityId() {
+		return activityId;
+	}
 
-    public void setIsSingle(String isSingle) {
-        this.isSingle = isSingle;
-    }
+	public void setActivityId(String activityId) {
+		this.activityId = activityId;
+	}
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
+	public boolean isSettingDefault() {
+		return isSettingDefault;
+	}
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+	public void setSettingDefault(boolean isSettingDefault) {
+		this.isSettingDefault = isSettingDefault;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getIsSingle() {
+		return isSingle;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setIsSingle(String isSingle) {
+		this.isSingle = isSingle;
+	}
 
-    @Override
-    public String toString() {
-        return "ActivitySingUpRequest [memberId=" + memberId + ", nickName=" + nickName + ", age=" + age + ", sex="
-                + sex + ", board=" + board + ", talent=" + talent + ", duty=" + duty + ", remarks=" + remarks
-                + ", activityId=" + activityId + ", isSettingDefault=" + isSettingDefault + ", isSingle=" + isSingle
-                + ", phoneNumber=" + phoneNumber + ", email=" + email + "]";
-    }
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "ActivitySingUpRequest [memberId=" + memberId + ", nickName="
+				+ nickName + ", age=" + age + ", sex=" + sex + ", board="
+				+ board + ", talent=" + talent + ", duty=" + duty
+				+ ", remarks=" + remarks + ", activityId=" + activityId
+				+ ", isSettingDefault=" + isSettingDefault + ", isSingle="
+				+ isSingle + ", phoneNumber=" + phoneNumber + ", email="
+				+ email + "]";
+	}
 
 }
