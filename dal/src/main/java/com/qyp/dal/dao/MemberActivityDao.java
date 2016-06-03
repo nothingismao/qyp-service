@@ -13,4 +13,6 @@ public interface MemberActivityDao {
     public List<MemberActivity> getMemberListByMemberId(String memberId);
 
     public boolean insertMemberActivity(MemberActivity memberActivity);
+
+	public boolean isExist(String memberId, Integer valueOf);
 }

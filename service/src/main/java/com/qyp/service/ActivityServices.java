@@ -75,7 +75,7 @@ public class ActivityServices {
 	}
 
 	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
-	public ResponseDto singUp(@RequestBody ActivitySignUpRequest request) {
+	public ResponseDto signUp(@RequestBody ActivitySignUpRequest request) {
 		logger.debug(request.toString());
 		boolean exist = memberDao.isExist(request.getMemberId());
 		Member member = new Member();
@@ -84,6 +84,10 @@ public class ActivityServices {
 			memberDao.insertMember(member);
 		} else {
 			memberDao.updateMember(member);
+		}
+		exist = memberActivityDao.isExist(request.getMemberId(),Integer.valueOf(request.getActivityId()));
+		if(exist){
+			return ResponseDto.create(false, "报名失败，已存在报名记录");
 		}
 		MemberActivity memberActivity = new MemberActivity();
 		memberActivity.setActivityId(Integer.valueOf(request.getActivityId()));
@@ -209,6 +213,7 @@ public class ActivityServices {
 			String memberId = memberActivity.getMemberId();
 			Member member = memberDao.getMemberById(memberId);
 			MemberListResponse response2 = new MemberListResponse();
+			response2.setId(String.valueOf(memberActivity.getId()));
 			response2.setIsSingle(member.getIsSingle());
 			response2.setMemberId(memberId);
 			response2.setNickName(member.getNickName());
@@ -218,6 +223,9 @@ public class ActivityServices {
 			response2.setTalent(member.getTalent());
 			response2.setEmail(member.getEmail());
 			response2.setDuty(memberActivity.getDuty());
+			response2.setBoard(memberActivity.getBoard());
+			response2.setPassPort(member.getPassPort());
+			response2.setRealName(member.getRealName());
 			resultList.add(response2);
 		}
 		String fileName = ActivityHandler.buildMemberListFile(resultList);

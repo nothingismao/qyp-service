@@ -23,44 +23,61 @@ public class ActivityHandler {
 		Sheet sheet = workbook.createSheet();
 		Row row = sheet.createRow(0);
 		Cell itemValue1 = row.getCell(0, Row.CREATE_NULL_AS_BLANK);
-		itemValue1.setCellValue("memberId");
+		itemValue1.setCellValue("id");
 		Cell itemValue2 = row.getCell(1, Row.CREATE_NULL_AS_BLANK);
 		itemValue2.setCellValue("nickName");
-		Cell itemValue3 = row.getCell(2, Row.CREATE_NULL_AS_BLANK);
-		itemValue3.setCellValue("isSingle");
-		Cell itemValue4 = row.getCell(3, Row.CREATE_NULL_AS_BLANK);
-		itemValue4.setCellValue("sex");
-		Cell itemValue5 = row.getCell(4, Row.CREATE_NULL_AS_BLANK);
-		itemValue5.setCellValue("singUpStatus");
-		Cell itemValue6 = row.getCell(5, Row.CREATE_NULL_AS_BLANK);
-		itemValue6.setCellValue("phoneNumber");
-		Cell itemValue7 = row.getCell(6, Row.CREATE_NULL_AS_BLANK);
+		Cell itemValue12 = row.getCell(2, Row.CREATE_NULL_AS_BLANK);
+		itemValue12.setCellValue("realName");
+		Cell itemValue7 = row.getCell(3, Row.CREATE_NULL_AS_BLANK);
 		itemValue7.setCellValue("duty");
-		Cell itemValue8 = row.getCell(7, Row.CREATE_NULL_AS_BLANK);
-		itemValue8.setCellValue("talent");
-		Cell itemValue9 = row.getCell(8, Row.CREATE_NULL_AS_BLANK);
+		
+		Cell itemValue3 = row.getCell(4, Row.CREATE_NULL_AS_BLANK);
+		itemValue3.setCellValue("single");
+		Cell itemValue4 = row.getCell(5, Row.CREATE_NULL_AS_BLANK);
+		itemValue4.setCellValue("sex");
+		Cell itemValue5 = row.getCell(6, Row.CREATE_NULL_AS_BLANK);
+		itemValue5.setCellValue("singUpStatus");
+		
+		Cell itemValue6 = row.getCell(7, Row.CREATE_NULL_AS_BLANK);
+		itemValue6.setCellValue("phoneNumber");
+		Cell itemValue10 = row.getCell(8, Row.CREATE_NULL_AS_BLANK);
+		itemValue10.setCellValue("talent");
+		Cell itemValue8 = row.getCell(9, Row.CREATE_NULL_AS_BLANK);
+		itemValue8.setCellValue("board");
+		
+		Cell itemValue11 = row.getCell(10, Row.CREATE_NULL_AS_BLANK);
+		itemValue11.setCellValue("passPort");
+		Cell itemValue9 = row.getCell(11, Row.CREATE_NULL_AS_BLANK);
 		itemValue9.setCellValue("email");
 
 		for (int i = 0; i < members.size(); i++) {
 			MemberListResponse member = members.get(i);
 			Row rowValue = sheet.createRow(i + 1);
 			Cell memberValue1 = rowValue.getCell(0, Row.CREATE_NULL_AS_BLANK);
-			memberValue1.setCellValue(member.getMemberId());
+			memberValue1.setCellValue(member.getId());
 			Cell memberValue2 = rowValue.getCell(1, Row.CREATE_NULL_AS_BLANK);
 			memberValue2.setCellValue(member.getNickName());
-			Cell memberValue3 = rowValue.getCell(2, Row.CREATE_NULL_AS_BLANK);
-			memberValue3.setCellValue(member.getIsSingle());
-			Cell memberValue4 = rowValue.getCell(3, Row.CREATE_NULL_AS_BLANK);
-			memberValue4.setCellValue(member.getSex());
-			Cell memberValue5 = rowValue.getCell(4, Row.CREATE_NULL_AS_BLANK);
-			memberValue5.setCellValue(member.getSingUpStatus());
-			Cell memberValue6 = rowValue.getCell(5, Row.CREATE_NULL_AS_BLANK);
-			memberValue6.setCellValue(member.getPhoneNumber());
-			Cell memberValue7 = rowValue.getCell(6, Row.CREATE_NULL_AS_BLANK);
+			Cell memberValue12 = rowValue.getCell(2, Row.CREATE_NULL_AS_BLANK);
+			memberValue12.setCellValue(member.getRealName());
+			Cell memberValue7 = rowValue.getCell(3, Row.CREATE_NULL_AS_BLANK);
 			memberValue7.setCellValue(member.getDuty());
-			Cell memberValue8 = rowValue.getCell(7, Row.CREATE_NULL_AS_BLANK);
+
+			Cell memberValue3 = rowValue.getCell(4, Row.CREATE_NULL_AS_BLANK);
+			memberValue3.setCellValue("1".equals(member.getIsSingle())?"单身":"非单身");
+			Cell memberValue4 = rowValue.getCell(5, Row.CREATE_NULL_AS_BLANK);
+			memberValue4.setCellValue(member.getSex());
+			Cell memberValue5 = rowValue.getCell(6, Row.CREATE_NULL_AS_BLANK);
+			memberValue5.setCellValue(member.getSingUpStatus());
+			
+			Cell memberValue6 = rowValue.getCell(7, Row.CREATE_NULL_AS_BLANK);
+			memberValue6.setCellValue(member.getPhoneNumber());
+			Cell memberValue8 = rowValue.getCell(8, Row.CREATE_NULL_AS_BLANK);
 			memberValue8.setCellValue(member.getTalent());
-			Cell memberValue9 = rowValue.getCell(8, Row.CREATE_NULL_AS_BLANK);
+			Cell memberValue10 = rowValue.getCell(9, Row.CREATE_NULL_AS_BLANK);
+			memberValue10.setCellValue(member.getBoard());
+			Cell memberValue11 = rowValue.getCell(10, Row.CREATE_NULL_AS_BLANK);
+			memberValue11.setCellValue(member.getPassPort());
+			Cell memberValue9 = rowValue.getCell(11, Row.CREATE_NULL_AS_BLANK);
 			memberValue9.setCellValue(member.getEmail());
 		}
 		FileOutputStream fout = null;
